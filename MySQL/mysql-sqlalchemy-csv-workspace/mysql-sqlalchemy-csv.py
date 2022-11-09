@@ -38,11 +38,11 @@ class Purchase(Base):
 
 Base.metadata.create_all(engine)
 
-# file_name = "landon.csv"
+file_name = "landon.csv"
 
-# df = pandas.read_csv(file_name)
+df = pandas.read_csv(file_name)
 
-# df.to_sql(con=engine, name=Purchase.__tablename__, if_exists='append', index=False)
+df.to_sql(con=engine, name=Purchase.__tablename__, if_exists='append', index=False)
 
 session = sessionmaker()
 session.configure(bind=engine)
