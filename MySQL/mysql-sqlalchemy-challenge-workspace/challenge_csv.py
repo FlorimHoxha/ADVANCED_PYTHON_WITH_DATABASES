@@ -45,10 +45,9 @@ session.configure(bind=engine)
 s = session()
 
 overall_max = s.query(func.max(Selling.order_total)).scalar()
-# overall_max = s.query((Selling.cust_name, Selling.order_total)func.max(Selling.order_total)).scalar()
 print(overall_max)
 
-# results = s.query(Selling).order_by(Selling.order_total.desc()).limit(20)
+results = s.query(Selling).order_by(Selling.order_total.desc()).limit(20)
 
-# for r in results:
-#     print(r)
+for r in results:
+    print(r)
