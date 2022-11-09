@@ -11,10 +11,11 @@ conn = psycopg2.connect(database="finalproject",
 # conn.autocommit = True
 cursor = conn.cursor()
 
-"""cursor.execute("SELECT * FROM sales limit 20")
+cursor.execute("SELECT * FROM sales limit 20")
 data_results = cursor.fetchall()
-df = pd.DataFrame(data_results, columns=['order_num','order_type','cust_name','cust_state','prod_category','prod_number','prod_name','quantity','price','discount','order_total'])
-print(tabulate(df, headers='keys', tablefmt='psql', showindex=False))"""
+df = pd.DataFrame(data_results, columns=['order_num','order_type','cust_name','cust_state','prod_category',
+                  'prod_number','prod_name','quantity','price','discount','order_total'])
+print(tabulate(df, headers='keys', tablefmt='psql', showindex=False))
 
 # cursor.execute("""INSERT INTO SALES (ORDER_NUM, 
 #             ORDER_TYPE, CUST_NAME, PROD_NUMBER, PROD_NAME,
